@@ -1,0 +1,321 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
+
+*{margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif;}
+li{list-style: none;}
+a{text-decoration: none; color: black;}
+.blind{position: absolute; left: -9999px; text-indent: -9999px; font-size: 0;}
+.icon{background: url(../img/icon.png) no-repeat; display: inline-block;}
+button{background:none; border:none; outline-style:none; cursor:pointer;}
+.model-popup {display: none;}
+.test-drive-popup{display: none;}
+.scrollbar-inner .inner{height: 100%;}
+
+.black{background: #000;}
+.blue{background: #0d004c;}
+.brown{background: #382a27;}
+.brownmetal{background: brown;}
+.ivory{background: #fffff5;}
+.metallic{background: gray;}
+.velvet{background: #510b2f;}
+.white{background: #fff;}
+
+/* =============================================== header , nav (logo) */
+header{background: rgba(0,0,0,0.5); position: fixed; width: 100%; height: 70px; z-index: 99;}
+h1{margin: 13px 0 0 30px;}
+h1 img{width:100px;}
+
+nav{
+  background: white; padding-top:50px; height: 100%; position: fixed; opacity: 1; right: -200px; width:200px; transition: 0.5s; top: 0;
+  right:-200px; opacity:0; display: none;
+}
+nav::before{
+  content: '';
+
+}
+nav.menuopen::before{
+  position: fixed;
+  top:0; left:0; bottom:0; right:200px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 3s;
+  z-index: -1;
+}
+
+nav.submenuopen::before{
+  position: fixed;
+  top:0; left:0; bottom:0; right:400px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+/* index.js menuopen class */
+nav.menuopen{right: 0; opacity: 1; display: block;}
+nav.submenuopen{right: 200px;}
+.fa-times{color:black;}
+
+header > button{ color: white; font-size: 35px; height: 40px; position: fixed; line-height: 40px; top: 15px; right: 30px; width: 40px; z-index:70;}
+
+/* =============================================== 1dept menu */
+
+.gnb > li{width: 100%; box-sizing: border-box; padding: 20px 0;}
+.gnb > li > a{display: block; text-align: center; font-size: 18px; font-weight: 700; color: #333;}
+.gnb > li > a.active{color:#ffba00}
+
+/* =============================================== 2dept menu (model)*/
+.gnb .img-nb ul li{width: 100%;}
+.gnb .img-nb ul li a{text-align: center; font-size:14px; display: block; padding: 10px 0; box-sizing: border-box;}
+.gnb .img-nb ul li a img{display: block; width: 70%; position: relative; left:50%; transform: translateX(-50%);}
+.gon .imgn-nb ul li a span{display: block;}
+
+/* =============================================== 2dept menu (all) */
+
+.gnb > li > ul.subopen{left:200px; opacity: 1;}
+.gnb > li > ul{padding:50px 10px 50px; box-sizing: border-box; overflow: auto; position: absolute; height: 100%; width:100%; top:0; left:200px; background: white;}
+.gnb > li:not(.img-nb) ul li {text-align: center; padding:20px 0;}
+
+/* =============================================== 2dept hover */
+.gnb > li > ul > li:hover > a {color: #ffba00;}
+
+/*  =============================================== 시승 신청, 전시장 검색 */
+.gnb-sub{width:100%; position: absolute; bottom:50px; padding-bottom: 50px; text-align: center; overflow: hidden;}
+.gnb-sub li{padding:20px 0; font-size:18px;}
+.icon-car{background: url(../img/menu_icon_test.png); background-size: 100% 100%; height: 40px; vertical-align: middle; width:40px}
+.icon-place{background: url(../img/menu_icon_place.png); background-size: 100% 100%; height: 40px; vertical-align: middle; width: 40px;}
+
+/* =============================================== main visual */
+.sec-1{
+  position: fixed; top: 0; width: 100%; z-index: 1;
+}
+
+.sec-1 .swiper-container{height: 100vh; min-height: 650px; padding-top: 0; padding-bottom: 0;}
+
+  /* Swiper pagination bar setting */
+.sec-1 .swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+  bottom: 5px;height: 5px; top:auto; position:absolute;
+}
+  /* Swiper pagination move bar setting */
+.sec-1 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background:rgba(255,186,0,0.7);
+}
+
+.sec-1 .swiper-slide > .wrap{background: rgba(0,0,0,0.2); color: white; position:absolute; padding:70px;}
+.sec-1 .swiper-slide>.wrap .title{color: #ffba00; font-weight: 1000; font-size: 4em; text-align: center;}
+.sec-1 .swiper-slide>.wrap .subtitle{font-size: 2em; text-align: center;}
+.sec-1 .swiper-slide>.slide-text1{left: 50%; top:50%; transform: translate(-50%,-50%);}
+.sec-1 .swiper-slide>.slide-text2{left: 150px; top: 50%; transform: translateY(-50%);}
+.sec-1 .swiper-slide>.slide-text3{right: 150px; top: 50%; transform: translateY(-50%);}
+
+.sec-1 .swiper-wrapper .slide1{background: url(../img/main_visual2.jpg); background-position: center center; background-size: cover;}
+.sec-1 .swiper-wrapper .slide2{background: url(../img/main_visual3.jpg); background-position: center center; background-size: cover;}
+.sec-1 .swiper-wrapper .slide3{background: url(../img/main_visual4.jpg); background-position: center center; background-size: cover;}
+.sec-1 .video{width: 100%; height:100%; background: black;}
+
+  /* Swiper prev, next button */
+.sec-1 .swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background: url(../img/next1.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px; right: 50px; transition: all 0.5s;
+}
+
+.sec-1 .swiper-button-next:hover{
+    background: url(../img/next2.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px; right: 30px;
+}
+
+.sec-1 .swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background: url(../img/prev1.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px; left: 50px; transition: all 0.5s;
+}
+
+.sec-1 .swiper-button-prev:hover{
+  background: url(../img/prev2.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px; left: 30px;
+}
+
+/* =============================================== sec2 / sec2 article 공통 */
+.sec-2{background: white; position: relative; top: 970px; z-index: 50;}
+.sec-2 > article{position: relative;}
+.sec-2 > article > h2{color: #333333; font-size: 32px; letter-spacing: 25px; padding: 100px 0; text-align: center;}
+
+/* =============================================== sec2 article - model */
+.model{padding: 0 80px;}
+.model > .swiper-container{box-sizing: border-box; padding: 0 0 30px; margin-bottom: 30px; height: 615px;}
+.model .swiper-slide{width:33.33%; text-align: center;}
+.model .swiper-slide img{filter: grayscale(0.8); opacity: 0.5; width:60%; transition: 0.5s;}
+.model .swiper-slide-active img{filter: grayscale(0); opacity: 1; width: 100%;}
+.model .swiper-slide .text-box{opacity: 0; transition: all 0.5s;}
+.model .swiper-slide-active .text-box{opacity: 1;}
+.model .swiper-slide .text-box span{color: #333; display: block; font-size: 28px; font-weight: 700; padding: 40px 0;}
+.model .swiper-slide .text-box button{border: 1px solid #333; padding: 10px 40px; transition: all 0.5s;}
+.model .swiper-slide .text-box button:hover{background: #333; color: white;}
+
+.model .swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background: url(../img/next.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px;
+}
+
+.model .swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background: url(../img/prev.png) no-repeat; background-size:100% 100%; height: 50px; width: 50px;
+}
+/* =============================================== sec2 article - promotion */
+
+.promotion{overflow: hidden; padding: 0 80px 150px;}
+.promotion .pro-nav{width:100%; overflow: hidden;}
+.promotion .pro-nav li{float: left; width:20%; text-align: center; box-sizing: border-box; font-size:21px; font-weight: 700; color: #555; padding: 10px 0;}
+.promotion .pro-nav li a.active{color: #ffba00; text-decoration: underline;}
+
+.promotion .mobile-pro-nav{display: none; position: absolute; top:140px; left: 0; width:100%; overflow: hidden;}
+.promotion .mobile-pro-nav li{float: left; width:20%; text-align: center; box-sizing: border-box; font-size:14px; font-weight: 700; color: #555; padding: 10px 0;}
+.promotion .mobile-pro-nav li a.active{color: #ffba00; text-decoration: underline;}
+
+.promotion .pro-content{overflow: hidden;width:100%; margin-top:10px; height:750px; position: relative;}
+.promotion .pro-content > div{transition: 1s; overflow: hidden; padding:30px; box-sizing: border-box; width: 100%; height: 100%; position: absolute; opacity: 0;}
+.promotion .pro-content > div.active{opacity: 1;}
+.promotion .pro-content > div.active > .wrap{top:50%; transform: translateY(-50%);}
+
+.promotion .pro-content > div > .wrap{transition: 0.5s; top:50%; background: rgba(0,0,0,0.7); position: absolute; z-index: 77; color: white;}
+.promotion .pro-content > div > .wrap .scrollbar-inner{overflow: hidden;}
+.promotion .pro-content > div > .wrap .scrollbar-inner > .center{padding: 50px; box-sizing: border-box;}
+.promotion .pro-content .text-right .wrap{right: 30px;}
+.promotion .pro-content .text-left .wrap{text-align: right;}
+.promotion .pro-content > div > .wrap span{color:#ddd; font-size:21px; font-weight: 700; padding-bottom: 20px; display: block;}
+.promotion .pro-content > div > .wrap ul li:first-child{font-size:18px; padding:10px 0; color:#eee;}
+.promotion .pro-content > div > .wrap ul li{font-size:14px; padding: 5px 0; color:#ccc; }
+
+.pro-content #pro1{background: url(../img/pro_compass.jpg) no-repeat; background-size: cover; background-position: center center;}
+.pro-content #pro2{background: url(../img/pro_renegade.jpg) no-repeat; background-size: cover; background-position: center center;}
+.pro-content #pro3{background: url(../img/pro_grandcherokee.jpg) no-repeat; background-size: cover; background-position: center center;}
+.pro-content #pro4{background: url(../img/pro_cherokee.jpg) no-repeat; background-size: cover; background-position: center center;}
+.pro-content #pro5{background: url(../img/pro_wrangler.jpg) no-repeat; background-size: cover; background-position: center center;}
+
+/* =============================================== showroom */
+.showroom{background: url(../img/showroom_back.jpg) no-repeat; background-size: 100% 100%; padding: 0 80px 70px;}
+.showroom .white{color: white; padding:70px 0; background: none;}
+.showroom #map{background: white; box-sizing: border-box; height:700px;}
+
+/* =============================================== test-drive */
+
+.test-drive {padding: 0 80px 90px;}
+.test-drive ul li .wrap{position: relative; margin: 20px; }
+.test-drive ul li .wrap img{display: block; width: 100%;}
+.test-drive ul li .over{ background: rgba(0,0,0,0.5); width: 100%; height:100%; position:absolute; opacity:0; top:0; text-align:center; transition:0.5s; padding:20px; box-sizing: border-box;}
+.test-drive ul li .over span{height: 50%; color: white; display: block; font-size: 30px; font-weight: 1000; box-sizing: border-box; padding: 20px 0;}
+.test-drive ul li .over button{margin: 20px 0; padding: 4px 10px; border: 3px solid #ffba00; color: #ffba00; font-size: 24px; font-weight: bold; margin-top:1rem;}
+.test-drive ul li .over .btn-wrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.test-drive ul li .over:hover{opacity: 1;}
+.test-drive ul li .over button:hover{background: #ffba00; color: white;}
+
+/* =============================================== footer */
+footer{background: #212121; position: relative; top: 950px; z-index: 50;}
+footer .search-sns{background: #333333; height: 100px; padding:0 90px; box-sizing: border-box;}
+footer .search-sns form{float: left; position: relative; top: 20px; width: 300px; height: 60px;}
+footer .search-sns form input {background: none; border: none; border-bottom: 3px solid white; color: white; font-size: 18px; height: 60px; box-sizing: border-box; outline-style: none; text-indent: 10px; width: 100%;}
+footer .search-sns button { position: absolute; top: 0; right: 0; color: white; font-size: 28px; height: 60px; width: 60px; line-height: 60px; text-align: center;}
+footer .search-sns .sns{float: right; height: 40px; position: relative; right: 0; top: 30px;}
+footer .search-sns .sns li{float: left;}
+
+  /* footer icon */
+
+.icon-facebook, .icon-youtube, .icon-instagram{transition: 0.5s; height: 50px; width: 50px; cursor: pointer; margin-left: 40px; display: inline-block;}
+.icon-facebook{background: url(../img/facebook1.png); background-size: 100% 100%;}
+.icon-facebook:hover{background: url(../img/facebook2.png); background-size: 100% 100%;}
+.icon-youtube{background: url(../img/youtube1.png); background-size: 100% 100%;}
+.icon-youtube:hover{background: url(../img/youtube2.png); background-size: 100% 100%;}
+.icon-instagram{background: url(../img/insta1.png); background-size: 100% 100%;}
+.icon-instagram:hover{background: url(../img/insta2.png); background-size: 100% 100%;}
+
+footer .info {margin: auto; max-width: 1400px;}
+footer .info .mobile{display: none; position: relative; font-size: 21px; font-weight: 800; width: 100%; color: white; height: 50px; line-height: 50px; text-align: center;}
+footer .info ul{overflow: hidden; margin: 50px 0;}
+footer .info ul li{float: left; width: 16.66%;}
+footer .info ul li a{display: block; text-align: center; color:#ccc;}
+
+footer .info ul.infoclose{height: 0;}
+footer .info ul.infoopen{height: auto;}
+
+footer .fca{width: 110px; margin-left: 50%; transform: translateX(-50%);}
+footer .fca img{width: 100%;}
+
+footer .copy{color: #ccc; font-size: 14px; text-align: center; padding: 70px 0;}
+
+
+/* =============================================== 모델 팝업창 */
+.model-popup{background: rgba(0,0,0,0.5); height: 100%; position: fixed; top: 0; z-index:99; padding: 0px 200px; box-sizing: border-box;}
+.model-popup > .wrap{background: white; height: 100%;}
+
+.popup-header{height: 70px; border-bottom: 2px solid #333; padding: 0 20px; box-sizing: border-box;}
+.popup-header h2{font-size: 30px; display: inline-block; line-height: 70px;}
+.popup-header button{float: right; font-size: 30px; line-height: 70px;}
+
+.model-popup .scroll{height: 90vh; overflow: auto;}
+.popup-nav {height: 50px; }
+.popup-nav li {color: #333; float: left; font-size: 24px; font-weight: 800; text-align: center; width: 33.33%; line-height: 50px;}
+.popup-nav .active {border-bottom: 3px solid #ffba00;}
+.popup-body .big-gallery{position: relative; ;width: 90%; height: 400px; margin:auto;}
+.popup-body .big-gallery img {position: relative; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.big-gallery + h4 {text-align: center; font-size: 24px; padding:20px 0;}
+.color{padding:0 100px; height: 30px; box-sizing: border-box; text-align: center;}
+.color li{text-align: center; display: inline-block; margin: 0 10px;}
+.color li button{height: 30px; width: 30px; border: 1px solid #ccc; border-radius: 100%;}
+
+.small-gallery{width: 100%; overflow: hidden; padding:20px 30px; box-sizing: border-box;}
+.small-gallery li{padding: 5px; box-sizing: border-box;}
+.small-gallery li img{width: 100%;}
+.car-explanation {padding: 20px 50px; font-size: 14px; text-align: center;}
+.max-rpm{box-sizing: border-box; padding: 20px 30px; width: 100%; overflow: hidden;}
+.max-rpm div{text-align: center;}
+.max-rpm div p{font-size: 18px; line-height: 40px;}
+.max-rpm div p small{ color: #aaa; font-size: 14px; margin-left: 15px;}
+.max-rpm div strong{font-size: 30px; line-height: 60px;}
+.car-intro, .design{padding: 0 30px;}
+.car-intro .wrap, .design .wrap{position: relative; margin: 15px;}
+.car-intro .wrap img, .design .wrap img{width: 100%; display: block;}
+/* .car-intro li, .design li{position: relative; margin: 15px;}
+.car-intro li img, .design li img{width: 100%; display: block;} */
+.car-intro .wrap .over, .design .wrap .over{display: block; position: absolute; left: 0; color: white; transition: 0.5s; width: 100%; height: 50%; text-align: center; background: rgba(0,0,0,0.8); bottom: -50%; opacity: 0; padding: 15px; box-sizing: border-box;}
+.car-intro .wrap .over dl, .design .wrap .over dl{top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; padding: 20px; box-sizing: border-box; display: block; width: 100%;}
+.car-intro .wrap .over dl dt, .design .wrap .over dl dt{padding: 10px; font-size: 18px; font-weight: 700; letter-spacing: 2px; line-height: 20px;}
+.car-intro .wrap .over dl dd, .design .wrap .over dl dd{font-size: 14px; padding:15px; line-height:18px;}
+.car-intro .wrap:hover .over, .design .wrap:hover .over{opacity: 1; bottom: 0;}
+
+.car-intro+h4 { text-align: center; font-size: 24px; padding: 20px 0;}
+
+.f-red{color: red;}
+
+/* =============================================== 시승 신청 팝업창 */
+
+.test-drive-popup{background: rgba(0,0,0,0.5); height: 100%; position: fixed; top: 0; width: 100%; z-index:99; padding: 0px 100px; box-sizing: border-box;}
+.test-drive-popup > .wrap{position: relative; background: white; height: 100vh; overflow: hidden;}
+.test-drive-popup .close{position: absolute; right:20px; top:10px; font-size: 30px; z-index: 10;}
+.test-drive-popup > .wrap > div{float: left; height: 100vh; width:50%;}
+.test-drive-img {padding: 100px 30px; box-sizing: border-box;}
+.test-drive-img > b{ padding: 20px 0; display: block; font-size: 32px; text-align: center; width: 100%;}
+.test-drive-img > img{width: 100%;}
+
+.test-drive-form {padding: 20px; box-sizing: border-box; background: #eee;}
+.test-drive-form h2{font-size: 30px; display: inline-block; padding-bottom: 5px;}
+.test-drive-form > p {font-size: 14px; padding-bottom: 20px;}
+.test-drive-form .car-apply {padding-right: 25px; font-size: 16px; height: 80vh;}
+.car-apply .radio {padding:10px 0;}
+.radio p{color: #333; font-size: 12px; display: block;}
+
+.input-group{width: 100%;}
+.input-group label{display: block; font-weight: 500; padding: 20px 0 ;}
+.input-group input {box-sizing: border-box; height: 30px; text-indent: 10px; width: 100%; outline-style: none;}
+
+.select{margin: 0 -10px;}
+.select-group label{display: block; font-weight: 500; padding: 20px 0 ;}
+.select-group .wrap{margin: 0 10px;}
+.select-group select{height: 30px; width: 100%;}
+
+
+.textarea label{clear: both; display: block; font-weight: 500; padding: 20px 0 ;}
+.textarea textarea{width: 100%; height: 150px; padding: 10px; box-sizing: border-box; resize: none;}
+
+.checkbox{padding:10px 0 0 0;}
+.checkbox-group{padding: 10px 0;}
+.checkbox-group label a{color: #333; text-decoration: underline; font-size: 14px;}
+
+.test-drive-form button:last-child {border: 2px solid #333; color: #333; font-size: 18px; font-weight: 600; margin-top: 20px; padding: 7px 25px; transition: all 0.5s;}
+
+.test-drive-form button:last-child:hover{background: #333; color: white;}

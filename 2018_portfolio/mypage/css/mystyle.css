@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700|Sarabun:300,400,700,800');
+
+*{margin: 0; padding: 0; font-family: 'Sarabun','Noto Sans KR', sans-serif; color: #333;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none; color: #000;}
+.blind{position: absolute; left: -9999px; text-indent: -9999px; font-size: 0;}
+button{background: none; border: none; outline-style: none; cursor: pointer;}
+
+/* header nav */
+
+header{transition: 0.5s; height: 100px; position: fixed; width: 100%; line-height: 100px; padding: 0 100px; box-sizing: border-box; z-index: 99;}
+h1 a{font-size:30px;}
+
+nav ul{position: absolute; top: 0; right: 100px;}
+nav ul li{float: left; padding: 35px 0; }
+nav ul li a{display: block; line-height: 30px ;padding: 0 20px; font-size:18px; font-weight: 600;}
+nav ul li a.active{color:#9e3744; border-bottom: 2px solid #9e3744; font-size: 21px; transition: 0.5s;}
+
+/*  */
+section{position: relative;}
+article{width: 100%; position: relative; top: 0; padding: 100px; box-sizing: border-box; overflow: hidden;}
+article .h2{left: 50%; transform: translateX(-50%); text-align: center; padding: 0 0 50px; position: relative; letter-spacing: 10px; font-weight: lighter; color: #333;}
+article .h2 h2{display: inline-block; position: relative; top:-40px; font-size: 32px;}
+article .h2 span{display: inline-block; background: #ccc; height: 1px; width: 70px; top:0; margin: 48px 5px; position: relative;}
+/* article h2 > .line-right {left: 0;}
+article h2 > .line-left {right: 0;} */
+
+/* section article1 (intro) */
+#intro{height: 100vh; background: #fbc748;}
+#intro .swiper-container{width: 100%; height: 100%; padding: 50px; box-sizing: border-box;}
+#intro .parallax-bg{background: url(../img/main_bg.jpg) no-repeat; background-position: center center; background-size: cover; width: 150%; height: 100%; box-sizing: border-box; position: absolute; top: 0; left: 0;}
+#intro .swiper-slide{opacity: 0; transition: 1s;}
+#intro .swiper-slide-active{opacity: 1;}
+#intro .swiper-slide .wrap{background: rgba(255,255,255,0.5); padding: 20px; box-sizing: border-box;  width: 100%; height: 100%;}
+#intro .swiper-slide .wrap .title{font-size: 3vw; font-weight: bold; padding: 20px 0;}
+#intro .swiper-slide .wrap .subtitle{font-size:2vw; color:#9e3744; font-weight: 700; padding-bottom: 20px;}
+#intro .swiper-slide .wrap .text{font-size: 14px; letter-spacing: 10px;}
+
+/* section article (profile) */
+#about{background: #fff;}
+#about .wrap .info{text-align: center;}
+#about .wrap .info > li{ width: 300px; padding: 0 40px; box-sizing: border-box; position: relative; text-align: center; display: inline-block; margin: 20px 30px; vertical-align: top;}
+#about .wrap .info .myimg img{width: 170px;}
+#about .wrap .info > li > ul > li{color: #555; font-size: 14px; padding: 10px 0;}
+#about .wrap .info > li > ul > li:nth-child(1){font-size:21px; letter-spacing: 3px; font-weight: 700; padding-bottom: 30px;}
+
+#about h3{color: #555; text-align: center; font-size:21px; letter-spacing: 3px; font-weight: 700; padding: 50px 0;}
+#about .hashtag{padding: 10px; overflow: hidden;}
+#about .hashtag li{float: left; line-height: 30px; font-size: 14px; text-align: center;}
+#about .hashtag li .wrap{margin:15px; position: relative;}
+#about .hashtag li a{color: #555;}
+#about .hashtag li a.active{color: #9e3744; text-decoration: underline; font-weight: 1000; font-size: 18px;}
+
+#about .hash-content{box-sizing: border-box; text-align: center; height: 100px; padding:30px 0; position: relative;}
+#about .hash-content div{opacity: 0; width: 100%; padding:25px 0; position: absolute; top: 0; box-sizing: border-box; text-align: center;}
+#about .hash-content div.active{opacity: 1; transition: 0.5s;}
+#about .hash-content div p{font-size: 18px; letter-spacing: 4px; color: #555;}
+#about .hash-content div p b{color: #fc766a; text-decoration: underline;}
+
+/* background 좌우명 */
+
+#back{width: 100%; height: auto; overflow: auto; padding: 50px 20px; box-sizing: border-box;}
+.back-fixed{position: fixed; background: url(../img/back.jpg) no-repeat; background-position: center center; background-size: cover; z-index: -1; width: 100%; height: 100%; top:0; left: 0;}
+#back p{text-align: center; color: #fff; font-size: 28px; font-weight: bold; letter-spacing: 5px; padding: 50px 0; box-sizing: border-box;}
+
+/* section article (skill) */
+#skill{background: #eee;}
+#skill .container {margin-top: 80px; display: inline-block; overflow: hidden; width: 50%;}
+#skill .circle-container{display: block; overflow: hidden; position: relative; text-align: center; }
+#skill .circle{margin: 0 0 40px; display: inline-block; box-sizing: border-box; position: relative; }
+#skill .circle a{text-align: center; font-size: 21px; font-weight: 400; }
+#skill .circle .num{top: 35px; left: 0 ; line-height: normal; width: 100%; position: absolute; text-align: center; color: #aaa;}
+canvas{position: absolute; top: 0; left: 50%; transform: translateX(-50%); text-align: center;}
+
+#skill .circle-content{display: inline-block; height: 500px; float: right; width: 50%;}
+#skill .circle-content h3{text-align: center; font-size: 21px; line-height: 100px;}
+#skill .circle-content .wrap{text-align: center; letter-spacing: 3px; line-height: 30px;}
+#skill .circle-content .wrap p{padding: 50px 0; box-sizing: border-box; font-weight: 100;}
+
+/* section article (portfolio) */
+#portfolio {height: auto; background: #fff;}
+#portfolio .wrap {padding: 10px; text-align: center; margin-bottom: 30px;}
+#portfolio .wrap div{position: relative; display: inline-block; vertical-align: top;}
+#portfolio .wrap .img{width: 30%; margin: 0 50px; overflow: hidden; height: 500px; outline: 1px solid #ccc;}
+#portfolio .wrap .img img{width: 100%; transition: 5s;}
+
+#portfolio .explan {padding-left: 50px; box-sizing: border-box; width: 60%;}
+#portfolio .explan h4{font-size: 21px; color: #3b3a50; letter-spacing: 2px; padding-bottom: 30px;}
+#portfolio .explan p{font-size: 14px;}
+#portfolio .explan h4 b{font-size:35px; opacity: 0.7; }
+#portfolio .explan ul{overflow: hidden;}
+#portfolio .explan ul li:nth-child(1){font-size: 18px; font-weight: 1000; padding: 30px 0 20px; letter-spacing: 3px;}
+#portfolio .explan ul li{font-size: 14px; letter-spacing: 2px;}
+#portfolio .explan .text li{padding: 5px 0;}
+
+#portfolio .t-left{text-align: left;}
+#portfolio .t-right{text-align: right; float: left;}
+#portfolio .t-right .link li a{margin-left: 10px;}
+#portfolio .t-left .link li a{margin-right: 10px;}
+
+#portfolio .explan .link li{display: inline-block; position: relative;}
+#portfolio .explan .link li:nth-child(1){display: block; width: 100%;}
+#portfolio .explan .link li a{display: block; border: 1px solid #333; padding: 7px 20px; font-weight: 800; transition: 0.5s;}
+#portfolio .explan .link li:nth-child(2) a:hover{background: #de4d44; border: 1px solid #de4d44; color: white; }
+#portfolio .explan .link li:nth-child(3) a:hover{background: #9e3744; border: 1px solid #9e3744; color: white; }
+#portfolio .explan .link li:nth-child(4) a:hover{background: #ff842a; border: 1px solid #ff842a; color: white; }
+
+
+/* footer */
+footer {background: #333; padding:50px;}
+footer ul{overflow: hidden; text-align: center; }
+footer ul li{color: #ccc; font-size: 14px; padding: 20px; box-sizing: border-box; display: inline-block; text-align: center;}
+footer .my li i{color: #ccc; margin-right: 7px;}
+
+footer .git li a{display: block; background: url(../img/github_logo.png) no-repeat; width: 50px; height: 50px; background-size: 100% 100%; transition: all 0.3s;}
+footer .git li a:hover{display: block; background: url(../img/github_logo_h.png) no-repeat; width: 50px; height: 50px; background-size: 100% 100%;}
+
+footer small{color: #ccc; text-align: center; display: block;}

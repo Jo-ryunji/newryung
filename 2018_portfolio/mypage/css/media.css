@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@media screen and (max-width:1200px){
+  #about .wrap .info > li:nth-child(1){width: 100%;}
+
+  #skill .container {width: 100%;}
+  #skill .circle-content{width: 100%;}
+
+  #portfolio .wrap{padding: 0; text-align: left; overflow: hidden;}
+  #portfolio .wrap div{width: 100%;}
+  #portfolio .wrap .img {width: 100%; margin: 0; height: 500px; float: left;}
+  #portfolio .wrap .explan{text-align: center; padding: 0; float: right;}
+
+  #portfolio .explan .link li{display: block; margin-bottom: 5px;}
+  #portfolio .t-right .link li a{margin-left: 0px;}
+  #portfolio .t-left .link li a{margin-right: 0px;}
+
+}
+
+@media screen and (max-width:991px) {
+  h1 a{display: block; width: 100%; text-align: center; line-height: 50px;}
+  nav ul{position: relative; left: 0; overflow: hidden; width: 100%;}
+  nav ul li{padding: 10px 0; width: 25%; text-align: center; box-sizing: border-box;}
+  nav ul li a{margin:2px;}
+
+  article:not(.intro){padding: 100px 50px; }
+  article .h2 h2{font-size:21px;}
+
+  #intro{max-height: 500px; padding: 100px 30px 30px;}
+
+  #about .wrap .info > li{width: 100%; margin: 20px auto;}
+  #back {padding: 20px;}
+  #back p {font-size: 21px;}
+  #skill .circle-content .wrap p{font-size:14px;}
+
+  #portfolio .wrap .img{height: 300px;}
+}
+
+@media screen and (max-width:767px) {
+  header{padding: 0 10px;}
+  h1 a{font-size:21px; line-height: 50px;}
+  nav ul li a{font-size:12px; padding: 0;}
+  nav ul li a.active{font-size:12px;}
+
+  article .h2{padding: 20px;}
+  article .h2 span{display: none;}
+  article .h2 h2{font-size: 18px; position: relative; top: 0;}
+  article:not(.intro){padding: 20px;}
+
+  #intro .swiper-slide .wrap .text{font-size:10px; letter-spacing: 5px;}
+
+  #about .hashtag li a.active{color: #555; text-decoration: none; font-size: 14px;}
+  #about .hash-content{display: none;}
+  #about .wrap .info > li > ul > li, #about .hashtag li{font-size: 12px;}
+  #about .wrap .info > li > ul > li:nth-child(1), #about h3{font-size: 14px;}
+
+  #back p{font-size: 18px;}
+
+  #skill .circle-content h3, #skill .circle a{font-size:18px;}
+  #skill .circle-content {height: auto;}
+  #skill .circle-content .wrap p{padding: 20px 0;}
+
+  #portfolio .explan h4 {font-size: 18px;}
+  #portfolio .explan h4 b{font-size: 21px;}
+  #portfolio .explan ul li{font-size: 12px;}
+
+  footer{padding: 20px;}
+  footer ul li{width: 100%;}
+  footer .git li a{margin-left: 50%; transform: translateX(-50%);}
+}
+
+@media screen and (max-width:320px){
+  #skill{padding: 0;}
+}
